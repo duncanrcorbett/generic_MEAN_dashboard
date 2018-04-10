@@ -7,10 +7,13 @@ var bodyParser = require('body-parser');
 
 var appRoutes = require('./routes/app');
 
+var adminAuthenticationRoutes = require('./routes/admin-authentication.routes');
+var adminRoutes = require('./routes/admin.routes');
+
 var app = express();
 var mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost:27017/YOUR_DB');       // db
+mongoose.connect('mongodb://localhost:27017/hungrels-test');       // db
 console.log(mongoose.connection.readyState);
 
 // view engine setup
@@ -32,6 +35,8 @@ app.use(function(req, res, next) {
   next();
 });
 
+app.use('/admin-authentication', adminAuthenticationRoutes);
+app.use('/admin-routes', adminRoutes);
 app.use('/', appRoutes);
 
 // catch 404 and forward to error handler

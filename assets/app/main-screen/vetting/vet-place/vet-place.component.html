@@ -1,0 +1,108 @@
+<app-page-header
+        [heading]="'Vet Restaurant'"
+        [icon]="'fa fa-plus-circle'"
+        [breadCrumbs]= breadCrumbs
+        xmlns="http://www.w3.org/1999/html">
+</app-page-header>
+
+
+<form [formGroup]="myForm" >
+    <div class="col-md-6">
+
+        <label>Establishment Name</label>
+        <input
+                disabled
+                class="form-control"
+                formControlName="placeName"
+                type="text"
+                id="placeName"
+                name="placeName">
+
+
+        <div class="get-address">
+            <label>Address</label>
+            <input
+                    disabled
+                    class="form-control"
+                    formControlName="address"
+                    type="text"
+                    id="address"
+                    [(ngModel)]=newAddress
+                    name="address">
+
+        </div>
+        <label>Registration Number</label>
+        <input
+                disabled
+                class="form-control"
+                formControlName="regNo"
+                type="text"
+                id="regNo"
+                name="regNo">
+
+        <label>Contact Number</label>
+        <input
+                disabled
+                class="form-control"
+                formControlName="telNo"
+                type="text"
+                id="telNo"
+                name="telNo">
+
+
+    </div>
+    <div class="col-md-6">
+        <label>Account Number</label>
+        <input
+                disabled
+                style="width: 90%"
+                class="form-control"
+                formControlName="accNo"
+                type="text"
+                id="accNo"
+                name="accNo">
+
+        <label>Bank</label>
+        <input
+                disabled
+                style="width: 90%"
+                class="form-control"
+                formControlName="bank"
+                type="text"
+                id="bank"
+                name="bank">
+
+        <label>Branch Code</label>
+        <input
+                disabled
+                style="width: 90%"
+                class="form-control"
+                formControlName="branchCode"
+                type="text"
+                id="branchCode"
+                name="branchCode">
+
+
+        <label>Account Type</label>
+        <input
+                disabled
+                style="width: 90%"
+                class="form-control"
+                formControlName="accType"
+                type="text"
+                id="accType"
+                name="accType">
+
+        <div class="submit-all">
+            <button
+                    style="margin-top: 20px"
+                    (click)="onSubmit()"
+                    type="submit"
+                    [disabled]="!myForm.valid">
+                Activate
+            </button>
+        </div>
+    </div>
+
+
+</form>

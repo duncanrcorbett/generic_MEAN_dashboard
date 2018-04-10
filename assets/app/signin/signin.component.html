@@ -1,0 +1,31 @@
+<div class="body"></div>
+<div class="grad"></div>
+<div class="header">
+    <div style="margin-right: 20px">Hungrels<span>Admin</span></div>
+</div>
+<br>
+<div class="login">
+    <form [formGroup]="myForm" (ngSubmit)="onSignIn()">
+
+
+        <input
+                class="form-control"
+                formControlName="email"
+                type="text"
+                id="email"
+                placeholder="Email"
+                name="user">
+
+        <input
+                class="form-control"
+                formControlName="password"
+                type="password"
+                id="password"
+                placeholder="password"
+                name="password"><br>
+        <button type="submit">
+            Login
+        </button>
+    </form>
+
+</div>

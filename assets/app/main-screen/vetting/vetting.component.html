@@ -1,0 +1,29 @@
+<app-page-header [heading]="'Vetting'"></app-page-header>
+
+
+<table class="table-fill">
+    <thead>
+    <tr>
+        <th class="text-left">Restaurant Name</th>
+        <th class="text-left">Tel No</th>
+        <th class="text-left">Address</th>
+        <th class="text-left">Email</th>
+        <th class="text-left">Reg No</th>
+        <th class="text-left">Status</th>
+        <th class="text-left">Vet</th>
+    </tr>
+    </thead>
+    <tbody class="table-hover">
+    <tr  *ngFor="let place of places">
+        <td class="text-left">{{ place.placeName}}</td>
+        <td class="text-left">{{ place.telNo}}</td>
+        <td class="text-left">{{ place.address}}</td>
+        <td class="text-left">{{ place.email}}</td>
+        <td class="text-left">{{ place.regNo}}</td>
+        <td class="text-left">{{ place.status}}</td>
+        <td class="text-left"><button (click)="onVet(place)">Vet</button></td>
+    </tr>
+
+
+    </tbody>
+</table>

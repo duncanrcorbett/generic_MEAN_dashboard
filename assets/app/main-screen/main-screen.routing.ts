@@ -9,6 +9,9 @@ const mainScreenRoutes: Routes  = [
         children: [
             {path: '', redirectTo: 'dashboard'},
             {path: 'dashboard', loadChildren:'./dashboard/dashboard.module#DashboardModule'},
+            {path: 'vetting', loadChildren:'./vetting/vetting.module#VettingModule'},
+            {path: 'create-user', loadChildren:'./create-user/create-user.module#CreateUserModule'},
+            {path: 'vetting/vet-place', loadChildren:'./vetting/vet-place/vet-place.module#VetPlaceModule'}
 
         ]
     }
