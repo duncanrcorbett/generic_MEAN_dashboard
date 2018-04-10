@@ -10,7 +10,7 @@
     border: none;
     border-radius: 0;
     overflow-y: auto;
-    background-color: #373E40;
+    background-color: #FFA630;
     bottom: 0;
     overflow-x: hidden;
     padding-bottom: 40px;
@@ -23,7 +23,7 @@
 
 
 a.list-group-item.router-link-active{
-    background: #77878B;
+    background: #A57548;
 }
 
 .link-name{
@@ -33,7 +33,7 @@ a.list-group-item.router-link-active{
 }
 
 a.list-group-item {
-    background: #373E40;
+    background: #FFA630;
     border: 0;
     border-radius: 0;
     color: #fff;
@@ -43,7 +43,7 @@ a.list-group-item {
 }
 
 a:hover{
-    background: #77878B;
+    background: #A57548;
     color: #fff;
 }
 
