@@ -1,0 +1,53 @@
+
+.sidebar{
+    border-radius: 0;
+    position: fixed;
+    z-index: 1000;
+    top: 52px;
+    left: 235px;
+    width: 235px;
+    margin-left: -235px;
+    border: none;
+    border-radius: 0;
+    overflow-y: auto;
+    background-color: #373E40;
+    bottom: 0;
+    overflow-x: hidden;
+    padding-bottom: 40px;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+
+
+a.list-group-item.router-link-active{
+    background: #77878B;
+}
+
+.link-name{
+    position: absolute;
+    top: 10px;
+    left: 45px;
+}
+
+a.list-group-item {
+    background: #373E40;
+    border: 0;
+    border-radius: 0;
+    color: #fff;
+    text-decoration: none;
+    height: 45px;
+    font-size: 1.75rem;
+}
+
+a:hover{
+    background: #77878B;
+    color: #fff;
+}
+
+.fa{
+    margin-right: 10px;
+}
+
