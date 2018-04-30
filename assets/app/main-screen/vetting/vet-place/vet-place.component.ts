@@ -32,6 +32,8 @@ export class VetPlaceComponent implements OnInit{
     private bankForm;
     private branchCodeForm;
     private accTypeForm;
+    private lngForm;
+    private latForm;
 
     ngOnInit(){
 
@@ -49,7 +51,9 @@ export class VetPlaceComponent implements OnInit{
             accNo: new FormControl(),
             bank: new FormControl(),
             branchCode: new FormControl(),
-            accType: new FormControl()
+            accType: new FormControl(),
+            lng: new FormControl(),
+            lat: new FormControl()
         });
         this.placeNameForm = this.myForm.get('placeName');
         this.addressForm = this.myForm.get('address');
@@ -59,6 +63,8 @@ export class VetPlaceComponent implements OnInit{
         this.bankForm = this.myForm.get('bank');
         this.branchCodeForm = this.myForm.get('branchCode');
         this.accTypeForm = this.myForm.get('accType');
+        this.lngForm = this.myForm.get('lng');
+        this.latForm = this.myForm.get('lat');
 
         this.getPlace()
 
@@ -83,6 +89,8 @@ export class VetPlaceComponent implements OnInit{
         this.bankForm.setValue(this.place.bank);
         this.branchCodeForm.setValue(this.place.branchCode);
         this.accTypeForm.setValue(this.place.accType);
+        this.lngForm.setValue(this.place.longitude);
+        this.latForm.setValue(this.place.latitude);
     }
 
 

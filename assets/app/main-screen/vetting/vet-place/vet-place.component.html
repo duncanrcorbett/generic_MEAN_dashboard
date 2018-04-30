@@ -31,6 +31,27 @@
                     name="address">
 
         </div>
+
+        <label>Longitude</label>
+        <input
+                disabled
+                class="form-control"
+                formControlName="lng"
+                type="text"
+                id="lng"
+                name="lng">
+
+        <label>Latitude</label>
+        <input
+                disabled
+                class="form-control"
+                formControlName="lat"
+                type="text"
+                id="lat"
+                name="lat">
+
+
+
         <label>Registration Number</label>
         <input
                 disabled
@@ -49,7 +70,15 @@
                 id="telNo"
                 name="telNo">
 
-
+        <div class="submit-all">
+            <button
+                    style="margin-top: 20px"
+                    (click)="onSubmit()"
+                    type="submit"
+                    [disabled]="!myForm.valid">
+                Activate
+            </button>
+        </div>
     </div>
     <div class="col-md-6">
         <label>Account Number</label>
@@ -93,15 +122,7 @@
                 id="accType"
                 name="accType">
 
-        <div class="submit-all">
-            <button
-                    style="margin-top: 20px"
-                    (click)="onSubmit()"
-                    type="submit"
-                    [disabled]="!myForm.valid">
-                Activate
-            </button>
-        </div>
+
     </div>
 
 

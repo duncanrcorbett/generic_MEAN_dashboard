@@ -4,6 +4,7 @@ var bcrypt = require('bcryptjs');
 var jwt = require('jsonwebtoken');
 
 var Place = require('../models/place');
+var Admin = require('../models/admin')
 
 router.use('/', function(req, res, next){
     jwt.verify(req.query.token, 'secret', function(err, decoded){
