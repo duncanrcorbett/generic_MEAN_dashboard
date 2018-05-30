@@ -1,9 +1,10 @@
 
 import {Component, OnInit} from "@angular/core";
 import {VetPlaceService} from "./vet-place.service";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {Place} from "../place.model";
 import {FormControl, FormGroup} from "@angular/forms";
+import {NgxSmartModalService} from "ngx-smart-modal";
 
 @Component({
     selector: 'app-vetPlace',
@@ -21,7 +22,8 @@ export class VetPlaceComponent implements OnInit{
     place: Place;
     myForm: FormGroup;
 
-    constructor(private vetPlaceService: VetPlaceService, private route: ActivatedRoute){}
+    constructor(private vetPlaceService: VetPlaceService, private route: ActivatedRoute, private router: Router,
+                private ngxSmartModalService: NgxSmartModalService){}
 
     // FORM //
     private placeNameForm;
@@ -98,6 +100,20 @@ export class VetPlaceComponent implements OnInit{
         this.vetPlaceService.activatePlace(this.placeId).subscribe(
             data => console.log(data),
             error => console.log(error)
+        )
+    }
+
+    code = 'qqq'
+    takeControl(){
+        this.vetPlaceService.takeControl(this.placeId).subscribe(
+            res => {
+                console.log(res);
+                this.code = res;
+              this.ngxSmartModalService.getModal('controlModal').open()
+            },
+            err => {
+                console.log(err)
+            }
         )
     }
 }

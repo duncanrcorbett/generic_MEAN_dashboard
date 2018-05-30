@@ -35,4 +35,23 @@ export class VetPlaceService{
             .catch((error: any) => Observable.throw(error))
     }
 
+    takeControl(placeId){
+
+        let  payload = {
+            _id:placeId
+        };
+        const token = localStorage.getItem('token')
+            ? '?token=' + localStorage.getItem('token')
+            : '';
+        const body = JSON.stringify(payload);
+        const headers  = new HttpHeaders({'Content-Type': 'application/json'});
+        return this.http.post('admin-routes/takecontrol'+token,body,{headers:headers})
+            .map((response: any) => {
+            console.log(response);
+            return response.token;
+            })
+            .catch((error: any) => Observable.throw(error))
+    }
+
+
 }

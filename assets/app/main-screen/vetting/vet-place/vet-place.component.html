@@ -27,7 +27,6 @@
                     formControlName="address"
                     type="text"
                     id="address"
-                    [(ngModel)]=newAddress
                     name="address">
 
         </div>
@@ -127,3 +126,19 @@
 
 
 </form>
+
+<button type="button" class="control" (click)="takeControl()">CONTROL</button>
+
+<ngx-smart-modal #controlModal identifier="controlModal">
+    <div class="modal-body">
+        <h1>Control Code</h1>
+        <p style="word-wrap: break-word">{{code}}</p>
+        <button class="copy"
+                ngxClipboard
+                [cbContent]="code"
+        ><i class="fa fa-clipboard" aria-hidden="true"></i></button>
+        <div class="ok">
+            <button (click)="controlModal.close()">Close</button>
+        </div>
+    </div>
+</ngx-smart-modal>

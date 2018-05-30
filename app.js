@@ -10,11 +10,12 @@ var appRoutes = require('./routes/app');
 var adminAuthenticationRoutes = require('./routes/admin-authentication.routes');
 var adminRoutes = require('./routes/admin.routes');
 
+
 var app = express();
 var mongoose = require('mongoose');
 
 mongoose.connect('mongodb://demoUser:demoUser@ds117469.mlab.com:17469/hungrels-test');
-// mongoose.connect('mongodb://localhost:27017/hungrels-test');       // db
+ //mongoose.connect('mongodb://localhost:27017/hungrels-test');       // db
 console.log(mongoose.connection.readyState);
 
 // view engine setup
@@ -22,7 +23,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
 // uncomment after placing your favicon in /public
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+app.use(favicon(path.join(__dirname, 'public', 'favicon.png')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));

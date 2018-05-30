@@ -6,6 +6,8 @@ import {PageHeaderModule} from "../../../shared/modules/page-header/page-header.
 import {VetPlaceService} from "./vet-place.service";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {CommonModule} from "@angular/common";
+import {NgxSmartModalModule, NgxSmartModalService} from "ngx-smart-modal";
+import {ClipboardModule} from "ngx-clipboard";
 
 @NgModule({
     declarations: [
@@ -17,9 +19,12 @@ import {CommonModule} from "@angular/common";
         CommonModule,
         FormsModule,
         ReactiveFormsModule,
+        NgxSmartModalModule,
+        ClipboardModule
     ],
     providers:[
-        VetPlaceService
+        VetPlaceService,
+        NgxSmartModalService
     ]
 
 })

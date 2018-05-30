@@ -138,5 +138,41 @@ router.patch('/activate-place/:id', function (req, res, next){
 
 // ---------- END OF PLACES BACK END --------- //
 
+// ---------- TAKE CONTROL ---------- //
+
+router.post('/takecontrol', function (req, res, next){
+    Place.findOne({_id: req.body._id}, function(err, place){
+        if (err){
+            return res.status(500).json({
+                title: 'an Error occurred',
+                error: err
+            });
+        }
+        if (!place){
+            return res.status(401).json({
+                title: 'Login Failed',
+                error: {message: 'No Place Found'}
+            })
+        }
+        // if (!bcrypt.compareSync(req.body.password, place.password)){
+        //     return res.status(401).json({
+        //         title: 'Login Failed',
+        //         error: {message: 'Invalid login Credentials'}
+        //     });
+        // }
+        var newPlace = {
+            _id: place._id
+        };
+        var token = jwt.sign({place: newPlace}, 'secret', {expiresIn: 7200});
+        res.status(200).json({
+            message: "control token given",
+            token: token,
+            placeName: place.placeName,
+        })
+
+    })
+});
+
+
 
 module.exports = router;
