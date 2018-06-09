@@ -14,8 +14,8 @@ var adminRoutes = require('./routes/admin.routes');
 var app = express();
 var mongoose = require('mongoose');
 
-mongoose.connect('mongodb://demoUser:demoUser@ds117469.mlab.com:17469/hungrels-test');
- //mongoose.connect('mongodb://localhost:27017/hungrels-test');       // db
+//mongoose.connect('mongodb://demoUser:demoUser@ds117469.mlab.com:17469/hungrels-test');
+ mongoose.connect('mongodb://localhost:27017/hungrels-test');       // db
 console.log(mongoose.connection.readyState);
 
 // view engine setup
